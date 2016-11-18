@@ -1,0 +1,1 @@
+git remote set-url origin https://biker12345@github.com/biker12345/repo_name.git
