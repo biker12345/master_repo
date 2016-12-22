@@ -1,0 +1,34 @@
+Assignment :- clustering data based on user attribute 
+
+Assumptions :- 
+	1. particular waek subject (i.e English ,hindi) doesn't effect the classification (i.e maths dosen't influence more then english) , no of weak subjects effect the clustering 
+
+		reason :- 
+			for each subject to effect based on their name (i.e maths influence more then english) then each subject is supposed to have a influencable weight metric , which is not present.
+		alternative :- 
+			Hence sum of weak subject is taken as a feature (i.e english,hindi,sci. => 3 )
+
+	2. Number of clusters for flat clustering is choosen as 4 
+		
+		reason :- 
+			hard and fast rule for calculating no. clusters for K-means = SQRT(N/2) where N = number of sample (i.e 20 in our case)
+			=> SQRT(10) = 3.16 ~ =  4
+		
+		alternative :-
+			elbow rule could have been used to determine the number of clusters , but dataset is quite small to get a valuable insight 
+
+	
+	3. Groups 'a','b' ,'c','d' are labelled using labelencoder
+		reason :- 
+			directly mapping groups to a scalar entity can effect the clusters due to non-normalized values
+		alternative :- 
+			use of labelencoder/on-hot key encoder (scit-learn packages)
+
+	4. Scaling / Normalization is not used over the the dataset 
+		reason :- 
+			due to un-uniform distribution of data over the range of 0-98 the window is very short to normalize the attributes
+		alternative :
+			for uniform distribution of data ,"scale" method can be used to normalise the distance ratio between the data points
+
+
+
